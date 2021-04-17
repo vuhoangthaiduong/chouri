@@ -1,0 +1,24 @@
+<tr>
+  <td class="pl-4"><%= index %></td>
+  <td>
+      <h5 class="font-medium mb-0"><%= user.username %></h5>
+  </td>
+  <td>
+      <span class="text-muted"><%= user.email %></span><br>
+      <span class="text-muted"><%= user.phone_number %></span>
+  </td>
+  <td>
+      <span class="text-muted"><%= user.created_at.to_date %></span><br>
+      <span class="text-muted"><%= user.created_at.strftime("%I:%M%p") %></span>
+  </td>
+  <td>
+    <select class="form-control category-select" id="exampleFormControlSelect1">
+      <option>Admin</option>
+      <option>User</option>
+    </select>
+  </td>
+  <td>
+    <button type="button" class="btn btn-outline-secondary ml-2"><i class="fa fa-edit"></i> </button>
+    <button type="button" class="btn btn-outline-danger ml-2"><i class="fa fa-trash"></i> </button>
+  </td>
+</tr>
