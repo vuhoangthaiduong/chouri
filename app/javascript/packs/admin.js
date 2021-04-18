@@ -8,9 +8,9 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "jquery"
 import "bootstrap"
-import "../stylesheets/application"
-import "./admin/sb-admin-2"
-import "./admin/bootstrap.bundle.min.js"
+import "../stylesheets/admin.scss"
+import "./admin/sb-admin-2.js"
+import "./bootstrap.bundle.min.js"
 
 Rails.start()
 ActiveStorage.start()

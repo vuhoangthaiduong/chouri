@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root   'static_pages#home'
+  root   'users#feed'
   get    '/about',  to: 'static_pages#about'
   get    '/contact',  to: 'static_pages#contact'
   get    '/signup', to: 'users#new'
@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   post   '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  scope :app do
-    resources :users
+  resources :users do
+    member do
+      get 'change_password', to: 'users#change_password'
+    end
   end
 
   namespace :admin do

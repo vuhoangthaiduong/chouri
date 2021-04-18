@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   before_action :check_if_user_exists, only: %i[show edit update destroy]
 
   def index
-    @users = User.all.page(params[:page]).per(5)
+    @users = User.all.page(params[:page]).per(6)
   end
 
   def show
@@ -39,7 +39,7 @@ class Admin::UsersController < Admin::BaseController
   def destroy
     @user.destroy
     flash[:success] = "User deleted"
-    redirect_to users_url
+    redirect_to admin_users_path, status: 303
   end
     
   private
@@ -52,6 +52,7 @@ class Admin::UsersController < Admin::BaseController
     if !User.exists?(params[:id])
       flash[:info] = "User not found"
       redirect_to root_path
+      return
     end
     @user = User.find(params[:id])
   end

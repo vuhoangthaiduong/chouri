@@ -18,7 +18,15 @@
     </select>
   </td>
   <td>
-    <button type="button" class="btn btn-outline-secondary ml-2"><i class="fa fa-edit"></i> </button>
-    <button type="button" class="btn btn-outline-danger ml-2"><i class="fa fa-trash"></i> </button>
+    <button type="button" class="btn btn-outline-secondary ml-2">
+      <i class="fa fa-edit"></i> 
+    </button>
+    <% if user.id != current_user.id %>
+      <%= link_to admin_user_path(user.id), class: "btn btn-outline-danger ml-2", 
+                                            method: :delete, 
+                                            data: { confirm: "You sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    <% end %>
   </td>
 </tr>

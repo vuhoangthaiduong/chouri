@@ -1,0 +1,8 @@
+.form-inline{
+  width: 100%;
+  justify-content: center;
+}
+
+.form-inline #search{
+  width: 50%;
+}
